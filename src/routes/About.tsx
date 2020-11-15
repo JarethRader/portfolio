@@ -12,10 +12,10 @@ const About = (props: Props) => {
           <div className='text-right text-white text-xl'>
             <p className='md:px-0 px-4'>
               I am a fullstack developer, I grew up in Grand Junction, Colorado;
-              I really like grilled cheese sandwiches; I majored in physics at
-              Colorado Mesa University, which probably means I'm really good at
-              math; Now a days I spend most of my time programming; I just want
-              to make something my mom will be proud of.
+              I enjoy mountain biking and hiking; I studied physics at Colorado
+              Mesa University, which probably means I'm really good at math; Now
+              a days I spend most of my time programming; I just want to make
+              something my mom will be proud of.
             </p>
           </div>
           <hr className='shadow-xl pb-2' />

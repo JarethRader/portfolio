@@ -52,14 +52,14 @@ const Projects = (props: Props) => {
   const [showModal, setShowModal] = React.useState(false);
   const [open, setOpen] = React.useState(true);
   React.useEffect(() => {
-    console.log(showModal);
+    // console.log(showModal);
     const timer = setTimeout(() => {
       setShowModal(!showModal);
     }, 2000);
     return () => clearTimeout(timer);
   }, [open]);
   const toggleOpen = (event: React.MouseEvent<HTMLDivElement>) => {
-    console.log('Open Toggled');
+    // console.log('Open Toggled');
     event.preventDefault();
     setOpen(!open);
   };
@@ -88,7 +88,7 @@ const Projects = (props: Props) => {
       {open ? null : (
         <div>
           <CSSTransition in={open} timeout={300} classNames='fade'>
-            <div className='min-h-screen w-screen absolute bg-gray-800 opacity-75 transform md:-rotate-25 md:-translate-y-24 -translate-y-20 z-30'></div>
+            <div className='min-h-screen w-screen absolute bg-gray-800 opacity-75 transform md:-rotate-25 scale-150 z-30'></div>
           </CSSTransition>
         </div>
       )}
@@ -157,6 +157,11 @@ const Projects = (props: Props) => {
                   toggleOpen={toggleOpen}
                   title={project.title}
                   imageURL={project.imageURL}
+                  videoURL={
+                    project.videoURL !== undefined
+                      ? project.videoURL
+                      : undefined
+                  }
                   blurb={project.blurb}
                   description={project.description}
                   githubLink={project.githubLink}
@@ -181,6 +186,7 @@ interface ProjectProps {
   toggleOpen: (event: React.MouseEvent<HTMLDivElement>) => void;
   title: string;
   imageURL: string;
+  videoURL?: string;
   blurb: string;
   description: string;
   githubLink: string;
@@ -232,6 +238,10 @@ const ProjectModal: React.FC<ProjectProps> = (props: ProjectProps) => {
           <div className='w-4'></div>
         </div>
         <div className='p-4 overflow-auto scroll' style={{ height: '80vh' }}>
+          {/* {props.videoURL ? (
+            <iframe src={props.videoURL}></iframe>
+          ) : (
+            )} */}
           <img
             className='mx-auto rounded'
             style={{ width: '80%' }}

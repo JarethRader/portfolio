@@ -13,9 +13,9 @@ const Home = (props: Props) => {
         <div className='flex-row flex items-center justify-center flex-wrap'>
           <div className='text-xl text-gray-200'>Fullstack Developer</div>
           <GripLinesVertical size='24' className='text-purple-600' />
-          <div className='text-xl text-gray-200'>React</div>
+          <div className='text-xl text-gray-200'>React.JS</div>
           <GripLinesVertical size='24' className='text-purple-600' />
-          <div className='text-xl text-gray-200'>Node</div>
+          <div className='text-xl text-gray-200'>Node.JS</div>
         </div>
         <div>
           <img

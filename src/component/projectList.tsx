@@ -2,6 +2,7 @@ export interface IProjectList {
   id: number;
   title: string;
   imageURL: string;
+  videoURL?: string;
   blurb: string;
   description: string;
   githubLink: string;
@@ -41,13 +42,16 @@ const projectList = [
     githubLink: 'N/A',
   },
   // {
-  //   id: '3',
-  //   title: 'Video Editor'
-  //   imageURL: '',
+  //   id: 3,
+  //   title: 'Video Editor',
+  //   imageURL:
+  //     'https://s3-us-west-1.amazonaws.com/www.jarethrader.com/resources/RadishChoiceView.jpg',
+  //   videoURL: 'https://www.radishsystems.com/videos/newport_phonebot.mp4',
   //   blurb: "I'm an occasional freelance video editor",
-  //   description: 'Since 2017 I've been editing videos for Radish Systems, a telecommunications company based in Boulder, CO. I created an updated showcase video for their ChoiceView Phonebot that they presented at the 2019 Amazon Connect ',
-  //   githubLink: 'https://www.radishsystems.com/videos/newport_phonebot.mp4'
-  // }
+  //   description:
+  //     "Since 2017 I've been editing videos for Radish Systems, a telecommunications company based in Boulder, CO. I created an updated showcase video for their ChoiceView Phonebot that they presented at the 2019 Amazon Connect ",
+  //   githubLink: 'N/A',
+  // },
 ];
 
 export default projectList;
