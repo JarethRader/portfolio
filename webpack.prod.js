@@ -104,7 +104,6 @@ module.exports = merge(common, {
       filename: 'static/css/[name].[chunkhash:8].css',
       chunkFilename: 'static/css/[id].[contenthash].css',
       ignoreOrder: true,
-    }),
-    new ManifestPlugin(),
+    })
   ],
 });
