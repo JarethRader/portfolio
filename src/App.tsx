@@ -36,7 +36,7 @@ const routes = [
 
 const App = () => {
   return (
-    <div className='bg-black overflow-x-hidden'>
+    <div className='bg-black overflow-x-hidden p-0 m-0'>
       <NebulaBackground />
 
       <BrowserRouter>
