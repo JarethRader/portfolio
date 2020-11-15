@@ -19,7 +19,7 @@ const Home = (props: Props) => {
         </div>
         <div>
           <img
-            src='https://s3-us-west-1.amazonaws.com/www.jarethrader.com/resources/JRLogo.png'
+            src='https://jareth-dependencies.s3-us-west-1.amazonaws.com/portfolio/resources/JRLogo.png'
             alt='JR Icon'
           />
         </div>

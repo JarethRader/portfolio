@@ -17,7 +17,7 @@ interface Props {
 
 const Navbar: React.FC<Props> = (props: Props) => {
   return (
-    <div className=' w-full min-h-screen overflow-hidden max-h-screen z-10 absolute'>
+    <div className='w-full z-10 absolute overscroll-none overflow-hidden'>
       <div className='min-h-screen flex-col flex justify-between md:transform md:rotate-25'>
         <div className='h-12 md:h-20 bg-gray-400 shadow-2xl md:px-64 z-20'>
           <div className='flex md:justify-end justify-center items-center h-full'>
@@ -33,12 +33,6 @@ const Navbar: React.FC<Props> = (props: Props) => {
               className='text-black hover:text-purple-600 px-8 transform md:-rotate-25 focus:outline-none'>
               <Linkedin size='48' />
             </a>
-            {/* <a
-              href='#'
-              target='_blank'
-              className='text-black hover:text-purple-600 px-8 transform md:-rotate-25 focus:outline-none'>
-              <Twitter size='48' />
-            </a> */}
           </div>
         </div>
         <div className='h-screen w-full absolute py-20 md:py-24'>

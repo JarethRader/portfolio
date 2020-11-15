@@ -14,7 +14,7 @@ const projectList = [
     id: 0,
     title: 'CryptoLib',
     imageURL:
-      'https://s3-us-west-1.amazonaws.com/www.jarethrader.com/resources/CryptoLib.jpg',
+      'https://jareth-dependencies.s3-us-west-1.amazonaws.com/portfolio/resources/CryptoLib.jpg',
     blurb:
       'Fullstack website to hosts public domain books on the Ethereum blockchain',
     description:
@@ -25,7 +25,7 @@ const projectList = [
     id: 1,
     title: 'Playmayte',
     imageURL:
-      'https://s3-us-west-1.amazonaws.com/www.jarethrader.com/resources/Playmayte.jpg',
+      'https://jareth-dependencies.s3-us-west-1.amazonaws.com/portfolio/resources/Playmayte.jpg',
     blurb: 'A dating site for gamers',
     description:
       'While quarantining due to COVID-19, I was inspired to create a dating website for video game and anime lovers in order to meet, connect and play their favorite games and watch their favorite animes together. It’s a fullstack MERN site, programmed primarily in typescript, uses the Tailwindcss framework, and is hosted on AWS.',
@@ -35,7 +35,7 @@ const projectList = [
     id: 2,
     title: 'Stone Rader Boards',
     imageURL:
-      'https://s3-us-west-1.amazonaws.com/www.jarethrader.com/resources/SRBoards.jpg',
+      'https://jareth-dependencies.s3-us-west-1.amazonaws.com/portfolio/resources/SRBoards.jpg',
     blurb: 'My friend and I make and sell longboards',
     description:
       'In highschool my friend and I got interested in making longboards. We spent time to figure out how to efficiently press our own boards, where to source materials, and how to do everything else in between. We have sold about 20 boards since we starting making them, and have recently been experimenting with building skateboards too.',
@@ -45,7 +45,7 @@ const projectList = [
   //   id: 3,
   //   title: 'Video Editor',
   //   imageURL:
-  //     'https://s3-us-west-1.amazonaws.com/www.jarethrader.com/resources/RadishChoiceView.jpg',
+  //     'https://jareth-dependencies.s3-us-west-1.amazonaws.com/portfolio/resources/RadishChoiceView.jpg',
   //   videoURL: 'https://www.radishsystems.com/videos/newport_phonebot.mp4',
   //   blurb: "I'm an occasional freelance video editor",
   //   description:
