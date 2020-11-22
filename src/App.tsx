@@ -6,9 +6,11 @@ import {
   Switch,
   useRouteMatch,
   useLocation,
+  Redirect,
   matchPath,
 } from 'react-router-dom';
 import { TransitionGroup, CSSTransition } from 'react-transition-group';
+import history from './utils/history';
 
 import Navbar from './component/navbar';
 
@@ -19,7 +21,6 @@ import { prefetchMap } from './utils/preload';
 const Home = React.lazy(() => retry(() => import('./routes/Home')));
 const Projects = React.lazy(() => retry(() => import('./routes/Projects')));
 const About = React.lazy(() => retry(() => import('./routes/About')));
-const NotFound = React.lazy(() => retry(() => import('./routes/NotFound')));
 
 const NebulaBackground = () => {
   return (
@@ -39,17 +40,17 @@ const routes = [
 ];
 
 const App = () => {
+  console.log(history);
   return (
     <div className='bg-black overflow-x-hidden p-0 m-0'>
       <NebulaBackground />
-
       <BrowserRouter>
         <Switch>
-          <Route path='/'>
-            <Portfolio />
+          <Route exact path='/'>
+            <Redirect to='/home' />
           </Route>
           <Route path='*'>
-            <NotFound />
+            <Portfolio />
           </Route>
         </Switch>
       </BrowserRouter>
@@ -61,6 +62,10 @@ function Portfolio() {
   let match = useRouteMatch();
 
   const location = useLocation();
+  React.useEffect(() => {
+    history.push(location);
+  }, [location]);
+
   const prefetchConf = prefetchMap.find(({ path }) =>
     matchPath(location.pathname, { path, exact: true })
   );
