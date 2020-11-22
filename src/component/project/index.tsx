@@ -1,6 +1,10 @@
 import React from 'react';
 import { StyledIcon } from 'styled-icons/types';
-import { CloseOutline } from '@styled-icons/evaicons-outline';
+import {
+  CloseOutline,
+  ExternalLinkOutline,
+  GithubOutline,
+} from '@styled-icons/evaicons-outline';
 
 interface ProjectProps {
   toggleOpen: (event: React.MouseEvent<HTMLDivElement>) => void;
@@ -79,23 +83,31 @@ export const ProjectModal: React.FC<ProjectProps> = (props: ProjectProps) => {
           </div>
           <div className='flex flex-row w-full justify-evenly'>
             {props.githubLink !== 'N/A' ? (
-              <div className='text-left text-lg underline'>
-                <a
-                  href={props.githubLink}
-                  target='_blank'
-                  className=' hover:text-purple-600 cursor-pointer orbitron-font'>
-                  Source code
-                </a>
+              <div className='text-left text-md'>
+                <button className='px-8 py-4 rounded bg-black hover:bg-purple-600 cursor-pointer shadow hover:shadow-2xl text-white'>
+                  <a
+                    href={props.githubLink}
+                    target='_blank'
+                    className='orbitron-font'>
+                    Source code
+                  </a>
+                  <GithubOutline size='32' title='Github' />
+                </button>
               </div>
             ) : null}
             {props.liveLink !== 'N/A' ? (
-              <div className='text-left text-lg underline'>
-                <a
-                  href={props.liveLink}
-                  target='_blank'
-                  className=' hover:text-purple-600 cursor-pointer orbitron-font'>
-                  View Live
-                </a>
+              <div className='text-left text-md'>
+                <button>
+                  <button className='px-8 py-4 rounded bg-black hover:bg-purple-600 cursor-pointer shadow hover:shadow-2xl text-white'>
+                    <a
+                      href={props.liveLink}
+                      target='_blank'
+                      className='orbitron-font'>
+                      View Live
+                    </a>
+                    <ExternalLinkOutline size='32' title='Github' />
+                  </button>
+                </button>
               </div>
             ) : null}
           </div>
