@@ -114,12 +114,15 @@ export const ProjectModal: React.FC<ProjectProps> = (props: ProjectProps) => {
           {props.stack !== undefined ? (
             <div>
               <h1 className='orbitron-font font-bold text-center'>
-                Technologies
+                Tech Stack
               </h1>
               <div className='flex flex-row flex-wrap justify-center py-4 montserrat-font'>
                 {props.stack?.map((item, key) => (
-                  <div className='p-4' key={key}>
-                    <item.icon size='32' title={item.title} />
+                  <div className='p-4 flex flex-col' key={key}>
+                    <div className='w-full flex justify-center'>
+                      <item.icon size='32' title={item.title} />
+                    </div>
+                    <p>{item.title}</p>
                   </div>
                 ))}
               </div>

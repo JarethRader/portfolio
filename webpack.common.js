@@ -49,6 +49,6 @@ module.exports = {
       options: { alias: { 'react-dom': '@hot-loader/react-dom' } },
     }),
     new WebpackBar(),
-    // new BundleAnalyzerPlugin(),
+    // process.env.NODE_ENV === 'analyze' && new BundleAnalyzerPlugin(),
   ],
 };
