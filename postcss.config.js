@@ -5,17 +5,17 @@ module.exports = {
   plugins: [
     require('tailwindcss'),
     require('autoprefixer'),
-    cssnano({ preset: 'default' }),
-    purgecss({
-      content: [
-        './src/**/*.ts',
-        './src/**/*.tsx',
-        './src/**/*.js',
-        './src/**/*.jsx',
-      ],
-      defaultExtractor: (content) => content.match(/[\w-/:]+(?<!:)/g) || [],
-      whitelistPatterns: [/page/, /slide/, /fade/],
-      whitelistPatternsChildren: [/page/, /slide/, /fade/],
-    }),
+    //   cssnano({ preset: 'default' }),
+    //   purgecss({
+    //     content: [
+    //       './src/**/*.ts',
+    //       './src/**/*.tsx',
+    //       './src/**/*.js',
+    //       './src/**/*.jsx',
+    //     ],
+    //     defaultExtractor: (content) => content.match(/[\w-/:]+(?<!:)/g) || [],
+    //     whitelistPatterns: [/page/, /slide/, /fade/],
+    //     whitelistPatternsChildren: [/page/, /slide/, /fade/],
+    //   }),
   ],
 };

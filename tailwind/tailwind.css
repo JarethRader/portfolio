@@ -5,9 +5,14 @@
 @import 'tailwindcss/utilities';
 
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
 
 .orbitron-font {
   font-family: 'Orbitron', sans-serif;
+}
+
+.montserrat-font {
+  font-family: 'Montserrat', sans-serif;
 }
 
 .w-fat {
@@ -35,12 +40,12 @@
 }
 
 .o1 {
-  background: url(https://jareth-dependencies.s3-us-west-1.amazonaws.com/portfolio/resources/bg.png);
+  background: url(https://d2q1q2xjiqiovj.cloudfront.net/portfolio/resources/bg.png);
   z-index: 1;
 }
 
 .o2 {
-  background: url(https://jareth-dependencies.s3-us-west-1.amazonaws.com/portfolio/resources/stars.png);
+  background: url(https://d2q1q2xjiqiovj.cloudfront.net/portfolio/resources/stars.png);
   z-index: 2;
   animation: 200s scroll infinite linear;
   -ms-filter: 'progid:DXImageTransform.Microsoft.Alpha(Opacity=50)';
@@ -51,13 +56,13 @@
 }
 
 .o3 {
-  background: url(https://jareth-dependencies.s3-us-west-1.amazonaws.com/portfolio/resources/nebula.png);
+  background: url(https://d2q1q2xjiqiovj.cloudfront.net/portfolio/resources/nebula.png);
   z-index: 3;
   animation: 200s scroll2 infinite linear;
 }
 
 .o4 {
-  background: url(https://jareth-dependencies.s3-us-west-1.amazonaws.com/portfolio/resources/clouds.png);
+  background: url(https://d2q1q2xjiqiovj.cloudfront.net/portfolio/resources/clouds.png);
   z-index: 3;
   animation: 400s scroll infinite linear;
 }

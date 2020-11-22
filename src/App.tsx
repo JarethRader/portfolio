@@ -4,8 +4,9 @@ import {
   BrowserRouter,
   Route,
   Switch,
-  Redirect,
   useRouteMatch,
+  useLocation,
+  matchPath,
 } from 'react-router-dom';
 import { TransitionGroup, CSSTransition } from 'react-transition-group';
 
@@ -13,9 +14,12 @@ import Navbar from './component/navbar';
 
 import retry from './utils/retry';
 
+import { prefetchMap } from './utils/preload';
+
 const Home = React.lazy(() => retry(() => import('./routes/Home')));
 const Projects = React.lazy(() => retry(() => import('./routes/Projects')));
 const About = React.lazy(() => retry(() => import('./routes/About')));
+const NotFound = React.lazy(() => retry(() => import('./routes/NotFound')));
 
 const NebulaBackground = () => {
   return (
@@ -41,11 +45,11 @@ const App = () => {
 
       <BrowserRouter>
         <Switch>
-          <Route exact path='/'>
-            <Redirect to='/home' />
+          <Route path='/'>
+            <Portfolio />
           </Route>
           <Route path='*'>
-            <Portfolio />
+            <NotFound />
           </Route>
         </Switch>
       </BrowserRouter>
@@ -55,6 +59,29 @@ const App = () => {
 
 function Portfolio() {
   let match = useRouteMatch();
+
+  const location = useLocation();
+  const prefetchConf = prefetchMap.find(({ path }) =>
+    matchPath(location.pathname, { path, exact: true })
+  );
+  React.useEffect(() => {
+    if (prefetchConf) {
+      const id = setTimeout(() => {
+        prefetchConf.prefetchComponents.forEach((component) => {
+          try {
+            component();
+          } catch {
+            // handle error
+          }
+        });
+      }, 2000);
+
+      return () => {
+        clearTimeout(id);
+      };
+    }
+  }, [prefetchConf]);
+
   return (
     <Navbar>
       <TransitionGroup>

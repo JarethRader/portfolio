@@ -3,13 +3,13 @@ import React from 'react';
 import {
   ArrowIosForwardOutline,
   ArrowIosBackOutline,
-  CloseOutline,
 } from '@styled-icons/evaicons-outline';
 import { TransitionGroup, CSSTransition } from 'react-transition-group';
 import { useSpring, animated, config } from 'react-spring';
 import useMeasure from 'react-use-measure';
 
 import projectList, { IProjectList } from '../component/projectList';
+import { ProjectCard, ProjectModal } from '../component/project';
 
 interface Props {}
 
@@ -65,7 +65,7 @@ const Projects = (props: Props) => {
   };
 
   // @ts-ignore
-  const { rotateZ, ...rest } = useSpring({
+  const { rotateZ, scale, ...rest } = useSpring({
     config: config.gentle,
     from: {
       rotateZ: 0,
@@ -93,7 +93,7 @@ const Projects = (props: Props) => {
         </div>
       )}
       <animated.div
-        className='absolute w-full min-h-screen'
+        className='absolute w-full min-h-screen scale-50'
         style={{
           ...rest,
           transform: rotateZ.interpolate((z: number) => `rotate(${z}deg)`),
@@ -107,6 +107,9 @@ const Projects = (props: Props) => {
             blurb={project.blurb}
             description={project.description}
             githubLink={project.githubLink}
+            challenges={project.challenges}
+            stack={project.stack}
+            liveLink={project.liveLink}
           />
         </div>
       </animated.div>
@@ -124,7 +127,7 @@ const Projects = (props: Props) => {
             </div>
           </div>
         </div>
-        <div className='flex items-baseline pt-20 flex-row  md:w-3/5 static w-full'>
+        <div className='flex items-baseline pt-20 flex-row  md:w-3/5 static w-full md:transform md:-rotate-25'>
           <div>
             <button
               className='text-white flex self-baseline transform  cursor-pointer hover:scale-125 focus:outline-none'
@@ -157,14 +160,12 @@ const Projects = (props: Props) => {
                   toggleOpen={toggleOpen}
                   title={project.title}
                   imageURL={project.imageURL}
-                  videoURL={
-                    project.videoURL !== undefined
-                      ? project.videoURL
-                      : undefined
-                  }
                   blurb={project.blurb}
                   description={project.description}
                   githubLink={project.githubLink}
+                  challenges={project.challenges}
+                  stack={project.stack}
+                  liveLink={project.liveLink}
                 />
               </CSSTransition>
             </TransitionGroup>
@@ -175,94 +176,6 @@ const Projects = (props: Props) => {
               onClick={(e) => handleIndexForward(e)}>
               <ArrowIosForwardOutline size='64' />
             </button>
-          </div>
-        </div>
-      </div>
-    </div>
-  );
-};
-
-interface ProjectProps {
-  toggleOpen: (event: React.MouseEvent<HTMLDivElement>) => void;
-  title: string;
-  imageURL: string;
-  videoURL?: string;
-  blurb: string;
-  description: string;
-  githubLink: string;
-}
-
-const ProjectCard: React.FC<ProjectProps> = (props: ProjectProps) => {
-  return (
-    <div
-      className='bg-gray-400 rounded-lg shadow-xl grow cursor-pointer absolute'
-      onClick={(e) => props.toggleOpen(e)}>
-      <div className='flex flex-col'>
-        <div
-          className='bg-black orbitron-font w-full py-4 text-2xl text-white text-center stroke rounded-t-lg shadow-xl'
-          style={{
-            backgroundImage:
-              'radial-gradient(circle, rgba(70,70,70,1) 0%, rgba(0,0,0,1) 100%)',
-          }}>
-          {props.title}
-        </div>
-        <div className='p-4'>
-          <img
-            className='mx-auto rounded'
-            style={{ width: '80%' }}
-            src={props.imageURL}
-            alt='Placeholder'
-          />
-          <div className='my-8 text-center'>{props.blurb}</div>
-        </div>
-      </div>
-    </div>
-  );
-};
-
-const ProjectModal: React.FC<ProjectProps> = (props: ProjectProps) => {
-  return (
-    <div className=' bg-gray-400 rounded-lg shadow-xl lg:w-1/3 md:w-4/5 overflow-auto'>
-      <div className='flex flex-col '>
-        <div
-          className='bg-black orbitron-font w-full py-4 text-2xl text-white text-center stroke rounded-t-lg shadow-xl flex flex-row justify-between px-4'
-          style={{
-            backgroundImage:
-              'radial-gradient(circle, rgba(70,70,70,1) 0%, rgba(0,0,0,1) 100%)',
-          }}>
-          <div onClick={(e) => props.toggleOpen(e)} className='cursor-pointer'>
-            <CloseOutline size='24' className='text-gray-400' />
-          </div>
-          {/* Title */}
-          {props.title}
-          <div className='w-4'></div>
-        </div>
-        <div className='p-4 overflow-auto scroll' style={{ height: '80vh' }}>
-          {/* {props.videoURL ? (
-            <iframe src={props.videoURL}></iframe>
-          ) : (
-            )} */}
-          <img
-            className='mx-auto rounded'
-            style={{ width: '80%' }}
-            src={props.imageURL}
-            alt='Placeholder'
-          />
-          {props.githubLink !== 'N/A' ? (
-            <div>
-              <div className='my-4 text-left font-bold underline'>
-                <a
-                  href={props.githubLink}
-                  target='_blank'
-                  className=' hover:text-purple-600'>
-                  Check out source code
-                </a>
-              </div>
-              <hr className='my-2 bg-black' />
-            </div>
-          ) : null}
-          <div className='my-8 mx-auto text-left w-4/5'>
-            {props.description}
           </div>
         </div>
       </div>

@@ -5,6 +5,9 @@ module.exports = {
       width: {
         '2/1': '200%',
       },
+      height: {
+        65: '65vh',
+      },
       spacing: {
         26: '6.5rem',
         28: '7rem',

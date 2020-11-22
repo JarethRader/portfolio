@@ -7,9 +7,11 @@ import {
 import {
   GithubOutline as Github,
   LinkedinOutline as Linkedin,
-  TwitterOutline as Twitter,
+  // TwitterOutline as Twitter,
 } from '@styled-icons/evaicons-outline';
+import { File as Resume } from '@styled-icons/boxicons-regular';
 import { NavLink } from 'react-router-dom';
+import { useTransition, animated } from 'react-spring';
 
 interface Props {
   children: React.ReactNode;
@@ -38,36 +40,116 @@ const Navbar: React.FC<Props> = (props: Props) => {
         <div className='h-screen w-full absolute py-20 md:py-24'>
           {props.children}
         </div>
-
-        <div className='h-12 md:h-20 bg-gray-400 z-20 shadow-2xl w-full'>
-          <div className='md:mx-48 flex justify-center md:justify-start items-center h-full'>
-            <NavLink
-              activeStyle={{
-                color: 'black',
-              }}
-              to='/home'
-              className='transform md:-rotate-25 px-8 hover:text-black text-purple-600 focus:outline-none'>
-              <HomeIcon size='32' title='Home' />
-            </NavLink>
-            <NavLink
-              activeStyle={{
-                color: 'black',
-              }}
-              to='/projects'
-              className='transform md:-rotate-25 px-8 hover:text-black text-purple-600 focus:outline-none'>
-              <ProjectIcon size='32' title='Projects' />
-            </NavLink>
-            <NavLink
-              activeStyle={{
-                color: 'black',
-              }}
-              to='/about'
-              className='transform md:-rotate-25 px-8 hover:text-black text-purple-600 focus:outline-none'>
-              <PersonIcon size='32' title='About Me' />
-            </NavLink>
+        <div className='h-16 md:h-20 bg-gray-400 z-20 shadow-2xl w-full'>
+          <div className='md:mx-48 flex xl:justify-start justify-center lg:items-baseline h-full'>
+            <NavIcon icon={HomeIcon} title='Home' path='/home' />
+            <NavIcon icon={ProjectIcon} title='Projects' path='/projects' />
+            <NavIcon icon={PersonIcon} title='About' path='/about' />
+            <NavAnchor
+              icon={Resume}
+              title='Resume'
+              downloadURL='https://d2q1q2xjiqiovj.cloudfront.net/portfolio/resume/JarethRaderResume.pdf'
+            />
           </div>
         </div>
       </div>
+    </div>
+  );
+};
+
+interface NavIconProps {
+  icon: any;
+  title: string;
+  path: string;
+}
+
+const NavIcon = (NavProps: NavIconProps) => {
+  const [toggle, set] = React.useState(false);
+  const transitions = useTransition(toggle, null, {
+    from: { position: 'absolute', opacity: 0 },
+    enter: { opacity: 1 },
+    leave: { opacity: 0 },
+  });
+
+  return (
+    <div className='transform md:-rotate-25 px-6'>
+      <NavLink
+        onMouseEnter={(e) => {
+          set(true);
+        }}
+        onMouseLeave={(e) => {
+          set(false);
+        }}
+        activeStyle={{
+          color: 'black',
+        }}
+        to={NavProps.path}
+        className=' md:px-8 px-6 hover:text-black text-purple-600 focus:outline-none'>
+        <div>
+          {transitions.map(({ item, key, props }) =>
+            item ? (
+              <animated.div style={props} key={key}>
+                <h1 className='orbitron-font'>{NavProps.title}</h1>
+              </animated.div>
+            ) : (
+              <animated.div style={props} key={key}>
+                <div className='flex justify-center'>
+                  <NavProps.icon size='32' title={NavProps.title} />
+                </div>
+              </animated.div>
+            )
+          )}
+        </div>
+      </NavLink>
+    </div>
+  );
+};
+
+interface NavAnchorProps {
+  icon: any;
+  title: string;
+  downloadURL: string;
+}
+
+const NavAnchor = (NavProps: NavAnchorProps) => {
+  const [toggle, set] = React.useState(false);
+  const transitions = useTransition(toggle, null, {
+    from: { position: 'absolute', opacity: 0 },
+    enter: { opacity: 1 },
+    leave: { opacity: 0 },
+  });
+
+  return (
+    <div className='transform md:-rotate-25 px-6'>
+      <a
+        onMouseEnter={(e) => {
+          set(true);
+        }}
+        onMouseLeave={(e) => {
+          set(false);
+        }}
+        href={NavProps.downloadURL}
+        download
+        target='_blank'
+        className='transform md:-rotate-25 md:px-8 px-6 hover:text-black text-purple-600 focus:outline-none cursor-pointer'>
+        <div>
+          {transitions.map(({ item, key, props }) =>
+            item ? (
+              <animated.div style={props} key={key}>
+                <h1 className='orbitron-font flex self-end'>
+                  {NavProps.title}
+                </h1>
+              </animated.div>
+            ) : (
+              <animated.div style={props} key={key}>
+                <div className='flex justify-center'>
+                  <NavProps.icon size='32' title={NavProps.title} />
+                </div>
+              </animated.div>
+            )
+          )}
+        </div>
+      </a>
     </div>
   );
 };

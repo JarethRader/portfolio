@@ -1,5 +1,4 @@
 const webpack = require('webpack');
-const path = require('path');
 const WebpackBar = require('webpackbar');
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer')
   .BundleAnalyzerPlugin;
