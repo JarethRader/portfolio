@@ -97,16 +97,14 @@ export const ProjectModal: React.FC<ProjectProps> = (props: ProjectProps) => {
             ) : null}
             {props.liveLink !== 'N/A' ? (
               <div className='text-left text-md'>
-                <button>
-                  <button className='px-8 py-4 rounded bg-black hover:bg-purple-600 cursor-pointer shadow hover:shadow-2xl text-white'>
-                    <a
-                      href={props.liveLink}
-                      target='_blank'
-                      className='orbitron-font'>
-                      View Live
-                    </a>
-                    <ExternalLinkOutline size='32' title='Github' />
-                  </button>
+                <button className='px-8 py-4 rounded bg-black hover:bg-purple-600 cursor-pointer shadow hover:shadow-2xl text-white'>
+                  <a
+                    href={props.liveLink}
+                    target='_blank'
+                    className='orbitron-font'>
+                    View Live
+                  </a>
+                  <ExternalLinkOutline size='32' title='Github' />
                 </button>
               </div>
             ) : null}

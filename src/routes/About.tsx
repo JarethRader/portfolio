@@ -36,7 +36,6 @@ const About = (props: Props) => {
           </div>
           <div className='flex justify-end items-end w-full lg:col-span-2 xl:pt-64'>
             <div className='text-center orbitron-font w-full'>
-              {/* <hr className='shadow-xl pb-2' /> */}
               <div className='text-left text-white text-xl flex flex-row justify-center'>
                 <img
                   src='https://d2q1q2xjiqiovj.cloudfront.net/portfolio/resources/JarethNebula2.png'
@@ -44,7 +43,6 @@ const About = (props: Props) => {
                   className='w-full'
                 />
               </div>
-              {/* <hr className='shadow-xl pb-2' /> */}
             </div>
           </div>
         </div>
