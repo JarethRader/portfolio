@@ -13,11 +13,13 @@ const Home = (props: Props) => {
         </div>
         <hr className='shadow-xl pb-2' />
         <div className='flex-row flex items-center justify-center flex-wrap'>
-          <div className='text-xl text-gray-200'>Web Developer</div>
+          <div className='text-xl text-gray-200'>
+            Fullstack Software Engineer
+          </div>
           <GripLinesVertical size='24' className='text-purple-600' />
-          <div className='text-xl text-gray-200'>React.JS</div>
+          <div className='text-xl text-gray-200'>ReactJS</div>
           <GripLinesVertical size='24' className='text-purple-600' />
-          <div className='text-xl text-gray-200'>Node.JS</div>
+          <div className='text-xl text-gray-200'>NodeJS</div>
         </div>
         <div>
           <img
