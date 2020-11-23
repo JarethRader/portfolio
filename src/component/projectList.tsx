@@ -74,9 +74,9 @@ const projectList = [
     description:
       'While quarantining due to COVID-19, I was inspired to create a dating website for video game and anime lovers in order to meet, connect and play their favorite games and watch their favorite animes together. It’s a fullstack MERN site, programmed primarily in typescript, uses the Tailwindcss framework, and is hosted on AWS.',
     challenges: [
-      'I learned a lot of new technologies while building this site. I used MongoDB for this site, and in retrospect it was a mistake. MongoDB can be good for a project where you just need lists of data or objects, but a site like this really utilized relationships between the data I was storing, so a relation database like PostreSQL would have been a better choice.',
-      'I choose to build my own React toolchain; create-react-app hides its dependencies and I was runnign into a lot of problems with accidentally double installing some of them. I was able to control my webpack config a lot better doing this, which I really liked.',
-      'I deployed this website on AWS. It was really difficult to read through the AWS documention at first, since I had never used any of their services before. I had to take some time to learn about all the services as a beginnger before feeling comfortable to attempt to set my own enviroment for my project.',
+      'I learned a lot of new technologies while building this site. I used MongoDB for this site, and in retrospect it was a mistake. MongoDB can be good for a project where you just need lists of data or objects, but a site like this really utilized relationships between the data I was storing, so a relational database like PostreSQL would have been a better choice.',
+      'I chose to build my own React toolchain; create-react-app hides its dependencies and I was running into a lot of problems with accidentally double installing some of them. I was able to control my webpack config a lot better doing this, which I really liked.',
+      'I deployed this website on AWS. It was really difficult to read through the AWS documentation at first, since I had never used any of their services before. I had to take some time to learn about all the services as a beginner before feeling comfortable to attempt to set my own environment for my project.',
     ],
     stack: [
       { icon: Html5, title: 'HTML' },
@@ -101,9 +101,9 @@ const projectList = [
       'https://d2q1q2xjiqiovj.cloudfront.net/portfolio/resources/SRBoards.jpg',
     blurb: 'My friend and I make and sell longboards',
     description:
-      'In highschool my friend and I got interested in making longboards. We spent time to figure out how to efficiently press our own boards, where to source materials, and how to do everything else in between. We have sold about 20 boards since we starting making them, and have recently been experimenting with building skateboards too.',
+      'In highschool my friend and I got interested in making longboards. We spent time to figure out how to efficiently press our own boards, where to source materials, and how to do everything else in between. We have sold about 20 boards since we started making them, and have recently been experimenting with building skateboards too.',
     challenges: [
-      'We did a lot of trial and error before we found the best way to press boards. The most common problem we faced was having the boards come apart in some places, despite having an adequate amoutn of glue. We had to modify our press, and try to repress the bad boards several times until we managed to dial in the perfect setup.',
+      'We did a lot of trial and error before we found the best way to press boards. The most common problem we faced was having the boards come apart in some places, despite having an adequate amount of glue. We had to modify our press, and try to repress the bad boards several times until we managed to dial in the perfect setup.',
     ],
     githubLink: 'N/A',
     liveLink: 'N/A',
