@@ -2,7 +2,6 @@ const { merge } = require("webpack-merge");
 const common = require("./webpack.common.js");
 const path = require("path");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-const WatchMissingNodeModulesPlugin = require("react-dev-utils/WatchMissingNodeModulesPlugin");
 var ManifestPlugin = require("webpack-manifest-plugin");
 
 module.exports = merge(common, {
@@ -46,7 +45,6 @@ module.exports = merge(common, {
       chunkFilename: "static/css/[id].css",
       ignoreOrder: true,
     }),
-    new WatchMissingNodeModulesPlugin(path.resolve("node_modules")),
     // new ManifestPlugin(),
   ],
 });
