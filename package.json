@@ -28,7 +28,7 @@
     "mini-css-extract-plugin": "^0.11.2",
     "optimize-css-assets-webpack-plugin": "^5.0.4",
     "postcss-safe-parser": "^5.0.1",
-    "react-dev-utils": "^10.2.1",
+    "react-dev-utils": "^12.0.1",
     "react-transition-group": "^4.4.1",
     "react-use-measure": "^2.0.1",
     "source-map-loader": "^1.0.1",
