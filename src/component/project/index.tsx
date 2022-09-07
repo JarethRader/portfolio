@@ -39,7 +39,7 @@ export const ProjectCard: React.FC<ProjectProps> = (props: ProjectProps) => {
             src={props.imageURL}
             alt="Placeholder"
           />
-          <div className="my-8 text-center montserrat-font">{props.blurb}</div>
+          <div className="my-8 text-center montserrat-font text-lg">{props.blurb}</div>
         </div>
       </div>
     </div>
@@ -73,7 +73,7 @@ export const ProjectModal: React.FC<ProjectProps> = (props: ProjectProps) => {
               <h1 className="orbitron-font font-bold text-center text-black">
                 Project Description
               </h1>
-              <div className="mx-auto w-4/5 text-justify montserrat-font">{props.description}</div>
+              <div className="mx-auto w-4/5 text-justify montserrat-font text-lg">{props.description}</div>
             </div>
           </div>
           <div className="flex flex-row w-full justify-evenly">
@@ -101,7 +101,7 @@ export const ProjectModal: React.FC<ProjectProps> = (props: ProjectProps) => {
           <hr className="my-2 bg-black" />
           <div className="my-8 mx-auto text-left w-4/5">
             <h1 className="orbitron-font font-bold text-center">Challenges I faced</h1>
-            <ul className="list-outside list-disc text-justify montserrat-font">
+            <ul className="list-outside list-disc text-justify montserrat-font text-lg">
               {props.challenges.map((item, key) => (
                 <li key={key}>{item}</li>
               ))}

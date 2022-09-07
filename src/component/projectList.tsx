@@ -1,6 +1,6 @@
 import {
   ReactLogo,
-  NodeDotJs,
+  Nodedotjs,
   Html5,
   Css3,
   Javascript,
@@ -15,6 +15,8 @@ import {
   Amazonaws,
   Tailwindcss,
   Docker,
+  Solidity,
+  Web3dotjs,
 } from "@styled-icons/simple-icons";
 import { StyledIcon } from "styled-icons/types";
 
@@ -55,9 +57,9 @@ const projectList = [
       { icon: Bootstrap, title: "Bootstrap" },
       { icon: ReactLogo, title: "ReactJS" },
       { icon: Redux, title: "Redux" },
-      { icon: NodeDotJs, title: "NodeJS" },
-      //solidity,
-      //web3,
+      { icon: Nodedotjs, title: "NodeJS" },
+      { icon: Solidity, title: "Solidity" },
+      { icon: Web3dotjs, title: "Web3" },
       { icon: Github, title: "Github" },
       { icon: Heroku, title: "Heroku" },
     ],
@@ -86,7 +88,7 @@ const projectList = [
       { icon: Webpack, title: "Webpack" },
       { icon: Babel, title: "Babel" },
       { icon: Redux, title: "Redux" },
-      { icon: NodeDotJs, title: "NodeJS" },
+      { icon: Nodedotjs, title: "NodeJS" },
       { icon: Github, title: "Github" },
       { icon: Amazonaws, title: "AWS" },
     ],
@@ -115,40 +117,13 @@ const projectList = [
       { icon: Webpack, title: "Webpack" },
       { icon: Babel, title: "Babel" },
       { icon: Redux, title: "Redux" },
-      { icon: NodeDotJs, title: "NodeJS" },
+      { icon: Nodedotjs, title: "NodeJS" },
       { icon: Github, title: "Github" },
       { icon: Docker, title: "Docker" },
     ],
     githubLink: "https://github.com/JarethRader/LearnUp",
     liveLink: "N/A",
-  },
-  {
-    id: 3,
-    title: "QR Code Art",
-    imageURL: "https://d2q1q2xjiqiovj.cloudfront.net/portfolio/resources/qr_code_art.jpg",
-    blurb:
-      "Currently a WIP. A website to allow users to share images from physical locations with QR codes.",
-    description:
-      "The idea originated from having a traditional art gallery, but to use QR codes instead of actual artwork. That way you could potentially expand the experience of viewing art. But it evolved into letting users uploade images and generate QR codes they could put anywhere in the world to share their artwork.",
-    challenges: [
-      "This is the first fullstack web applications I've made that fully incorporates AWS.",
-    ],
-    githubLink: "https://github.com/JarethRader/QrCodeArt",
-    liveLink: "N/A",
-  },
-  {
-    id: 4,
-    title: "Stone Rader Boards",
-    imageURL: "https://d2q1q2xjiqiovj.cloudfront.net/portfolio/resources/SRBoards.jpg",
-    blurb: "My friend and I make and sell longboards.",
-    description:
-      "In highschool my friend and I got interested in making longboards. We spent time to figure out how to efficiently press our own boards, where to source materials, and how to do everything else in between. We have sold about 20 boards since we started making them, and have recently been experimenting with building skateboards too.",
-    challenges: [
-      "We did a lot of trial and error before we found the best way to press boards. The most common problem we faced was having the boards come apart in some places, despite having an adequate amount of glue. We had to modify our press, and try to repress the bad boards several times until we managed to dial in the perfect setup.",
-    ],
-    githubLink: "N/A",
-    liveLink: "N/A",
-  },
+  }
 ];
 
 export default projectList;
