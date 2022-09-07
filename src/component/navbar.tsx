@@ -87,7 +87,7 @@ const NavIcon = (NavProps: NavIconProps) => {
           {transitions.map(({ item, key, props }) =>
             item ? (
               <animated.div style={props} key={key}>
-                <h1 className='orbitron-font'>{NavProps.title}</h1>
+                <h1 className='orbitron-font mt-2'>{NavProps.title}</h1>
               </animated.div>
             ) : (
               <animated.div style={props} key={key}>
@@ -130,13 +130,11 @@ const NavAnchor = (NavProps: NavAnchorProps) => {
         // download
         target='_blank'
         className='transform md:-rotate-25 md:px-8 px-6 hover:text-black text-purple-600 focus:outline-none cursor-pointer'>
-        <div className=''>
+        <div>
           {transitions.map(({ item, key, props }) =>
             item ? (
               <animated.div style={props} key={key}>
-                <h1 className='orbitron-font flex self-end'>
-                  {NavProps.title}
-                </h1>
+                <h1 className='orbitron-font flex self-end mt-2'>{NavProps.title}</h1>
               </animated.div>
             ) : (
               <animated.div style={props} key={key}>
